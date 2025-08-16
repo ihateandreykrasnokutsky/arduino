@@ -1,3 +1,4 @@
+//THE CODE WAS CHANGED AND PROBABLY DOESN'T WORK
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <LowPower.h>
@@ -22,6 +23,7 @@ int button4State = HIGH;
 int button5State = HIGH;
 const int SCREEN_TIMEOUT = 5000;
 const int RELAY_TIMEOUT = 2500;
+int button_pressed;
 
 void setup() {
   digitalWrite(RELAY_PIN_6, HIGH);
@@ -62,6 +64,14 @@ void loop()
   button3State = digitalRead(BUTTON_PIN_3);
   button4State = digitalRead(BUTTON_PIN_4);
   button5State = digitalRead(BUTTON_PIN_5);
+
+
+       if (digitalRead(BUTTON_PIN_2) == low) button_pressed=2
+  else if (digitalRead(BUTTON_PIN_3) == low) button_pressed=3
+  else if (digitalRead(BUTTON_PIN_4) == low) button_pressed=4
+  else if (digitalRead(BUTTON_PIN_5) == low) button_pressed=5
+
+  
 
   //code for the 2nd button
   if (button2State == LOW) {
